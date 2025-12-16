@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://badminton-backend-ixk8.onrender.com';
+const API_BASE_URL = 'https://badminton-backend-ixk8.onrender.com/api';
 //http://127.0.0.1:8000/api
 // Create axios instance with base configuration
 const apiClient = axios.create({

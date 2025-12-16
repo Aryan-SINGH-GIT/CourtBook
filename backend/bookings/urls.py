@@ -11,8 +11,6 @@ from bookings.views import (
     CoachViewSet,
     DailyAvailabilityView,
     AddonAvailabilityView,
-    DailyAvailabilityView,
-    AddonAvailabilityView,
     AvailabilityView,
     PriceCalculationView,
 )
