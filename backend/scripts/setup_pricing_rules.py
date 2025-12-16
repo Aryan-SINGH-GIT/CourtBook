@@ -17,7 +17,7 @@ def setup_rules():
     # 1. Base Prices
     print("\nSetting up Base Prices...")
     base_prices = [
-        {'resource_type': 'COURT_HOUR', 'price': Decimal('200.00')},
+        {'resource_type': 'COURT_HOUR', 'price': Decimal('400.00')},
         {'resource_type': 'EQUIPMENT_HOUR', 'price': Decimal('100.00')},
         {'resource_type': 'COACH_HOUR', 'price': Decimal('500.00')},
     ]
