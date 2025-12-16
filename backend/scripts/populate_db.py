@@ -35,9 +35,9 @@ def run():
     # 2. Create Coaches
     print("\nCreating Coaches...")
     coaches_data = [
-        {'name': 'John Doe'},
-        {'name': 'Jane Smith'},
-        {'name': 'Mike Johnson'},
+        {'name': 'Amit Mehta'},
+        {'name': 'Priya Kumar'},
+        {'name': 'Rajesh Sharma'},
     ]
     
     for c_data in coaches_data:
@@ -50,11 +50,9 @@ def run():
     # 3. Create Equipment
     print("\nCreating Equipment...")
     equipment_data = [
-        {'name': 'Yonex Racket', 'total_quantity': 20, 'available_quantity': 20},
-        {'name': 'Professional Racket', 'total_quantity': 10, 'available_quantity': 10},
+        {'name': 'Badminton Racket', 'total_quantity': 10, 'available_quantity': 10},
         {'name': 'Shuttlecock Box', 'total_quantity': 50, 'available_quantity': 50},
-        {'name': 'Badminton Shoes (Size 9)', 'total_quantity': 5, 'available_quantity': 5},
-        {'name': 'Badminton Shoes (Size 10)', 'total_quantity': 5, 'available_quantity': 5},
+        {'name': 'Badminton Shoes', 'total_quantity': 5, 'available_quantity': 5},
     ]
     
     for e_data in equipment_data:
