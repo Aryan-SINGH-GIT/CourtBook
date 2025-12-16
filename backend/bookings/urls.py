@@ -11,6 +11,10 @@ from bookings.views import (
     CoachViewSet,
     DailyAvailabilityView,
     AddonAvailabilityView,
+    DailyAvailabilityView,
+    AddonAvailabilityView,
+    AvailabilityView,
+    PriceCalculationView,
 )
 
 router = DefaultRouter()
@@ -22,5 +26,7 @@ router.register(r'coaches', CoachViewSet, basename='coach')
 urlpatterns = [
     path('daily-matrix/', DailyAvailabilityView.as_view(), name='daily_matrix'),
     path('addon-availability/', AddonAvailabilityView.as_view(), name='addon_availability'),
+    path('availability/', AvailabilityView.as_view(), name='availability'),
+    path('price-calculation/', PriceCalculationView.as_view(), name='price_calculation'),
     path('', include(router.urls)),
 ]
