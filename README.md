@@ -116,7 +116,6 @@ A critical requirement for any booking system is preventing double bookings. Thi
 
 ## 📸 Screenshots
 
-*(Placeholder for application screenshots)*
 
 ### Booking Dashboard
 <img width="1334" height="685" alt="image" src="https://github.com/user-attachments/assets/48daa009-4097-4a36-ac7c-be3350671c72" />
