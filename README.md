@@ -44,7 +44,7 @@
    npm run dev
    ```
 4. **Access Application**:
-   Open [http://localhost:5173](http://localhost:5173) in your browser.
+   Open [https://courtbook.netlify.app/](https://courtbook.netlify.app/) in your browser.
 
 ---
 
