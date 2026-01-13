@@ -1,4 +1,4 @@
-# Badminton Court Booking System   [https://courtbook.netlify.app](courtbook-deployed-link)
+# Badminton Court Booking System   [courtbook-deployed-link](https://courtbook.netlify.app/login)
 
 ## Setup Instructions
 
