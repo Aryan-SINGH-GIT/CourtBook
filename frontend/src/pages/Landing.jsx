@@ -11,9 +11,9 @@ export default function Landing() {
     const [loading, setLoading] = useState(true);
 
     // AI Personalization State
-    const [headline, setHeadline] = useState("Serve Up Fun with Badminton");
-    const [subheadline, setSubheadline] = useState("Get ready to smash your way to excitement with our unique badminton-themed coasters");
-    const [cta, setCta] = useState("Shop Now");
+    const [headline, setHeadline] = useState("Bite into Success");
+    const [subheadline, setSubheadline] = useState("Fuel your business growth with the perfect blend of innovation and taste");
+    const [cta, setCta] = useState("Order Your Growth Plan");
 
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
