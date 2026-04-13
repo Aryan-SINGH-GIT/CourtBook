@@ -1,4 +1,4 @@
-# Badminton Court Booking System
+# Badminton Court Booking System   [courtbook-deployed-link](https://courtbook.netlify.app/)
 
 ## Setup Instructions
 
@@ -44,7 +44,7 @@
    npm run dev
    ```
 4. **Access Application**:
-   Open [http://localhost:5173](http://localhost:5173) in your browser.
+   Open [http://localhost:5173](http://localhost:5173) in your browser .
 
 ---
 
@@ -116,7 +116,6 @@ A critical requirement for any booking system is preventing double bookings. Thi
 
 ## 📸 Screenshots
 
-*(Placeholder for application screenshots)*
 
 ### Booking Dashboard
 <img width="1334" height="685" alt="image" src="https://github.com/user-attachments/assets/48daa009-4097-4a36-ac7c-be3350671c72" />
