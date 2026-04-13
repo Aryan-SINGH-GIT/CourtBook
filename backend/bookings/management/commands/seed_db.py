@@ -83,7 +83,7 @@ class Command(BaseCommand):
         self.stdout.write("\nCreating Test User...")
         if not User.objects.filter(username='testuser').exists():
             user = User.objects.create_user('testuser', 'test@example.com', 'password123')
-            self.stdout.write(f"  Created user: {user.username}")
+            self.stdomakut.write(f"  Created user: {user.username}")
         else:
             self.stdout.write("  User 'testuser' already exists")
 

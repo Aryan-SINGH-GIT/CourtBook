@@ -12,6 +12,8 @@ class Court(models.Model):
     name = models.CharField(max_length=100, unique=True)
     court_type = models.CharField(max_length=10, choices=COURT_TYPE_CHOICES, default='INDOOR')
     is_active = models.BooleanField(default=True)
+    average_rating = models.DecimalField(max_digits=3, decimal_places=1, default=0.0)
+    rating_count = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
@@ -50,6 +52,8 @@ class Coach(models.Model):
     
     name = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
+    average_rating = models.DecimalField(max_digits=3, decimal_places=1, default=0.0)
+    rating_count = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

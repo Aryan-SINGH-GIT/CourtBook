@@ -2,12 +2,15 @@ import { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { bookingAPI } from '../services/api';
 import { Calendar, Clock, MapPin, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
+import ReviewModal from '../components/ReviewModal';
 
 export default function MyBookings() {
     const { isDark } = useTheme();
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
+    const [selectedBooking, setSelectedBooking] = useState(null);
+    const [isReviewOpen, setIsReviewOpen] = useState(false);
 
     useEffect(() => {
         loadBookings();
@@ -120,19 +123,49 @@ export default function MyBookings() {
                                 </div>
                             </div>
 
+                            {/* Action Bar */}
                             {booking.status === 'CONFIRMED' && (
-                                <div className="flex justify-end pt-4 border-t border-zinc-100 dark:border-zinc-800">
+                                <div className="flex justify-end pt-4 border-t border-zinc-100 dark:border-zinc-800 gap-4">
+                                    {/* Cancel Button - Only for future bookings typically, but logic here allows any confirmed */}
                                     <button
                                         onClick={() => handleCancel(booking.id)}
                                         className="text-red-500 hover:text-red-400 font-medium text-sm transition-colors"
                                     >
                                         Cancel Booking
                                     </button>
+
+                                    {/* Review Button - Only for Past Bookings */}
+                                    {new Date(booking.date) < new Date() && (
+                                        <button
+                                            onClick={() => {
+                                                setSelectedBooking(booking);
+                                                setIsReviewOpen(true);
+                                            }}
+                                            className="text-brand-blue hover:text-blue-400 font-medium text-sm transition-colors"
+                                        >
+                                            Rate Experience
+                                        </button>
+                                    )}
                                 </div>
                             )}
                         </div>
                     ))}
                 </div>
+            )}
+
+            {selectedBooking && (
+                <ReviewModal
+                    booking={selectedBooking}
+                    isOpen={isReviewOpen}
+                    onClose={() => {
+                        setIsReviewOpen(false);
+                        setSelectedBooking(null);
+                    }}
+                    onReviewSubmitted={() => {
+                        // Refresh the list to show updated status if needed, or just close
+                        console.log("Review Submitted");
+                    }}
+                />
             )}
         </div>
     );

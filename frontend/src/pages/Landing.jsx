@@ -10,6 +10,36 @@ export default function Landing() {
     const [coaches, setCoaches] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    // AI Personalization State
+    const [headline, setHeadline] = useState("Smash Your Competition");
+    const [subheadline, setSubheadline] = useState("Elevate your startup game with our expert solutions");
+    const [cta, setCta] = useState("Serve Up Success");
+
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        const adImageUrl = params.get('ad_image');
+
+        if (adImageUrl) {
+            fetch('https://aryan8n.app.n8n.cloud/webhook/troopod-ai-pm', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    ad_image: adImageUrl, 
+                    // Hardcode production URL for testing so n8n cloud can successfully scrape it,
+                    // since n8n cloud cannot access 'http://localhost'
+                    landing_url: "https://courtbook.netlify.app/" 
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.headline) setHeadline(data.headline);
+                if (data.subheadline) setSubheadline(data.subheadline);
+                if (data.cta) setCta(data.cta);
+            })
+            .catch(err => console.error("AI Personalization Failed:", err));
+        }
+    }, []);
+
     // Coach specialty/bio mapping based on name
     const coachDetailsMap = {
         'Rajesh Sharma': {
@@ -95,22 +125,18 @@ export default function Landing() {
                 {/* Content */}
                 <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 text-center">
                     <h1 className="text-6xl md:text-8xl font-extrabold text-white mb-8 animate-fade-in drop-shadow-xl tracking-tight">
-                        Badminton Court
-                        <span className="block mt-2 text-white/90 font-cursive">
-                            Booking System
-                        </span>
+                        {headline}
                     </h1>
 
                     <p className="text-2xl md:text-3xl text-gray-200 mb-12 max-w-3xl mx-auto font-light animate-fade-in-delay drop-shadow-md">
-                        The professional way to book courts, equipment, and coaches.
-                        <span className="block mt-2 font-normal">Play more, worry less.</span>
+                        {subheadline}
                     </p>
 
                     <Link
                         to="/login"
                         className="group px-10 py-5 bg-brand-blue text-white rounded-full font-bold text-xl hover:bg-blue-600 transition-all transform hover:scale-105 shadow-xl flex items-center gap-3 animate-fade-in-delay-2"
                     >
-                        Get Started
+                        {cta}
                         <ArrowRight className="group-hover:translate-x-1 transition-transform" size={24} />
                     </Link>
                 </div>

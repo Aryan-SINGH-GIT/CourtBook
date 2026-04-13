@@ -13,6 +13,7 @@ from bookings.views import (
     AddonAvailabilityView,
     AvailabilityView,
     PriceCalculationView,
+    DashboardStatsView,
 )
 
 router = DefaultRouter()
@@ -26,5 +27,6 @@ urlpatterns = [
     path('addon-availability/', AddonAvailabilityView.as_view(), name='addon_availability'),
     path('availability/', AvailabilityView.as_view(), name='availability'),
     path('price-calculation/', PriceCalculationView.as_view(), name='price_calculation'),
+    path('admin/dashboard-stats/', DashboardStatsView.as_view(), name='admin_dashboard_stats'),
     path('', include(router.urls)),
 ]

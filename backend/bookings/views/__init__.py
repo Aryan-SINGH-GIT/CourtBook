@@ -30,6 +30,8 @@ from resources.services.availability_service import AvailabilityService
 from pricing.services.pricing_service import PricingService
 from resources.models import Court, Equipment, Coach
 
+from bookings.views.admin_views import DashboardStatsView
+
 
 class AvailabilityView(APIView):
     """Check availability of courts, coaches, and equipment for a time slot"""
