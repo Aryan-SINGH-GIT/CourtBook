@@ -11,9 +11,19 @@ export default function Landing() {
     const [loading, setLoading] = useState(true);
 
     // AI Personalization State
-    const [headline, setHeadline] = useState("Bite into Success");
-    const [subheadline, setSubheadline] = useState("Fuel your business growth with the perfect blend of innovation and taste");
-    const [cta, setCta] = useState("Order Your Growth Plan");
+    const [headline, setHeadline] = useState(
+        <>
+            Badminton Court<br/>
+            <span style={{ fontFamily: "'Great Vibes', cursive", fontWeight: 'normal' }} className="block -mt-2 md:-mt-2 tracking-normal text-7xl md:text-8xl">Booking System</span>
+        </>
+    );
+    const [subheadline, setSubheadline] = useState(
+        <>
+            The professional way to book courts, equipment, and coaches.<br/>
+            Play more, worry less.
+        </>
+    );
+    const [cta, setCta] = useState("Get Started");
 
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
